@@ -67,6 +67,20 @@ Public Class Form1
         ListBox1.Items.Add(thisString)
     End Sub
 
+    Sub SetDefaults()
+        FirstNameTextBox.Text = ""
+        LastNameTextBox.Text = ""
+        StreetAddressTextBox.Text = ""
+        CityTextBox.Text = ""
+        StateTextBox.Text = ""
+        ZipTextBox.Text = ""
+        'If ListBox1.SelectedIndex = -1 Then
+        '    ClearButton.Enabled = False
+        'Else
+        '    ClearButton.Enabled = True
+        'End If
+
+    End Sub
     Function UserInputIsValid() As Boolean
         Dim valid As Boolean = True
         Dim message As String
@@ -77,7 +91,45 @@ Public Class Form1
             message &= "First name is required."
         End If
 
+        If LastNameTextBox.Text = "" Then
+            valid = False
+            LastNameTextBox.Focus()
+            message &= "Last name is required."
+        End If
+
+        If StreetAddressTextBox.Text = "" Then
+            valid = False
+            StreetAddressTextBox.Text = ""
+            message &= "Street address required."
+        End If
+
+        If CityTextBox.Text = "" Then
+            valid = False
+            CityTextBox.Text = ""
+            message &= "City box required."
+        End If
+
+        If StateTextBox.Text = "" Then
+            valid = False
+            StateTextBox.Focus()
+            message &= "State box required."
+        End If
+
+        If ZipTextBox.Text = "" Then
+            valid = False
+            ZipTextBox.Focus()
+            message &= "Zip code box is empty."
+        End If
+
         Return valid
 
     End Function
+
+    Private Sub LastNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles LastNameTextBox.TextChanged
+
+    End Sub
+
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        Me.Close()
+    End Sub
 End Class

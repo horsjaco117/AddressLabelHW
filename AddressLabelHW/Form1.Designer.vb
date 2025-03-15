@@ -48,7 +48,6 @@ Partial Class Form1
         FirstNameTextBox.Name = "FirstNameTextBox"
         FirstNameTextBox.Size = New Size(150, 31)
         FirstNameTextBox.TabIndex = 0
-        FirstNameTextBox.Text = "FirstName"
         ' 
         ' LastNameTextBox
         ' 
@@ -56,7 +55,6 @@ Partial Class Form1
         LastNameTextBox.Name = "LastNameTextBox"
         LastNameTextBox.Size = New Size(150, 31)
         LastNameTextBox.TabIndex = 1
-        LastNameTextBox.Text = "LastName"
         ' 
         ' StreetAddressTextBox
         ' 
@@ -64,7 +62,6 @@ Partial Class Form1
         StreetAddressTextBox.Name = "StreetAddressTextBox"
         StreetAddressTextBox.Size = New Size(150, 31)
         StreetAddressTextBox.TabIndex = 2
-        StreetAddressTextBox.Text = "StreetAddress"
         ' 
         ' CityTextBox
         ' 
@@ -72,7 +69,6 @@ Partial Class Form1
         CityTextBox.Name = "CityTextBox"
         CityTextBox.Size = New Size(150, 31)
         CityTextBox.TabIndex = 3
-        CityTextBox.Text = "City"
         ' 
         ' StateTextBox
         ' 
@@ -80,7 +76,6 @@ Partial Class Form1
         StateTextBox.Name = "StateTextBox"
         StateTextBox.Size = New Size(150, 31)
         StateTextBox.TabIndex = 4
-        StateTextBox.Text = "State"
         ' 
         ' ZipTextBox
         ' 
@@ -88,7 +83,6 @@ Partial Class Form1
         ZipTextBox.Name = "ZipTextBox"
         ZipTextBox.Size = New Size(150, 31)
         ZipTextBox.TabIndex = 5
-        ZipTextBox.Text = "Zip"
         ' 
         ' MailingAddressGroupBox
         ' 
