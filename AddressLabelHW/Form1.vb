@@ -57,6 +57,14 @@ Public Class Form1
         '    SetDefaults()
         'End If
 
+        If UserInputIsValid() Then
+            addtolist(FirstNameTextBox.Text.PadRight(10) & LastNameTextBox.Text.PadRight(10) & StreetAddressTextBox.Text _
+                      & CityTextBox.Text & StateTextBox.Text & ZipTextBox.Text)
+        End If
+    End Sub
+
+    Sub addtolist(thisString As String)
+        ListBox1.Items.Add(thisString)
     End Sub
 
     Function UserInputIsValid() As Boolean
@@ -66,8 +74,10 @@ Public Class Form1
         If FirstNameTextBox.Text = "" Then
             valid = False
             FirstNameTextBox.Focus()
-            message &= "First name is required." & vbNewLine
-
+            message &= "First name is required."
         End If
+
+        Return valid
+
     End Function
 End Class
