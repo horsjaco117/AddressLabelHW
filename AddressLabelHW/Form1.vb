@@ -8,10 +8,6 @@ Option Strict On
 Option Explicit On
 
 Public Class Form1
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        '
-    End Sub
-
     Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles StateTextBox.TextChanged
 
     End Sub
@@ -44,24 +40,6 @@ Public Class Form1
 
     End Sub
 
-    Private Sub DisplayButton_Click(sender As Object, e As EventArgs) Handles DisplayButton.Click
-        'If UserInputIsValid() Then
-        '    FirstTextBox.Text = Scramble(FirstTextBox.Text)
-        '    LastTextBox.Text = Scramble(LastTextBox.Text)
-        '    SetCase()
-        '    SetFormat()
-        '    ReverseString()
-        '    RemoveWhiteSpace()
-        '    'ddToList(Me.Text)
-        '    AddToList(FirstTextBox.Text.PadRight(10) & LastTextBox.Text.PadRight(10) & AgeTextBox.Text.PadLeft(3))
-        '    SetDefaults()
-        'End If
-
-        If UserInputIsValid() Then
-            addtolist(FirstNameTextBox.Text.PadRight(10) & LastNameTextBox.Text.PadRight(10) & StreetAddressTextBox.Text _
-                      & CityTextBox.Text & StateTextBox.Text & ZipTextBox.Text)
-        End If
-    End Sub
 
     Sub addtolist(thisString As String)
         ListBox1.Items.Add(thisString)
@@ -74,11 +52,11 @@ Public Class Form1
         CityTextBox.Text = ""
         StateTextBox.Text = ""
         ZipTextBox.Text = ""
-        'If ListBox1.SelectedIndex = -1 Then
-        '    ClearButton.Enabled = False
-        'Else
-        '    ClearButton.Enabled = True
-        'End If
+        If ListBox1.SelectedIndex = -1 Then
+            ClearButton.Enabled = False
+        Else
+            ClearButton.Enabled = True
+        End If
 
     End Sub
     Function UserInputIsValid() As Boolean
@@ -131,5 +109,33 @@ Public Class Form1
 
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
+    End Sub
+    Private Sub DisplayButton_Click(sender As Object, e As EventArgs) Handles DisplayButton.Click
+        'If UserInputIsValid() Then
+        '    FirstTextBox.Text = Scramble(FirstTextBox.Text)
+        '    LastTextBox.Text = Scramble(LastTextBox.Text)
+        '    SetCase()
+        '    SetFormat()
+        '    ReverseString()
+        '    RemoveWhiteSpace()
+        '    'ddToList(Me.Text)
+        '    AddToList(FirstTextBox.Text.PadRight(10) & LastTextBox.Text.PadRight(10) & AgeTextBox.Text.PadLeft(3))
+        '    SetDefaults()
+        'End If
+
+        If UserInputIsValid() Then
+            addtolist(FirstNameTextBox.Text.PadRight(10) &
+                      LastNameTextBox.Text.PadRight(10) & vbCrLf &
+                      StreetAddressTextBox.Text & vbCrLf _
+                      & CityTextBox.Text & ", " & StateTextBox.Text & ZipTextBox.Text)
+        End If
+    End Sub
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SetDefaults()
+    End Sub
+
+    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
+        Console.WriteLine($"The information at {ListBox1.SelectedIndex} is {ListBox1.SelectedIndex}")
+        ListBox1.Items.RemoveAt(ListBox1.SelectedIndex)
     End Sub
 End Class
