@@ -24,7 +24,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -43,4 +43,31 @@ Public Class Form1
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
 
     End Sub
+
+    Private Sub DisplayButton_Click(sender As Object, e As EventArgs) Handles DisplayButton.Click
+        'If UserInputIsValid() Then
+        '    FirstTextBox.Text = Scramble(FirstTextBox.Text)
+        '    LastTextBox.Text = Scramble(LastTextBox.Text)
+        '    SetCase()
+        '    SetFormat()
+        '    ReverseString()
+        '    RemoveWhiteSpace()
+        '    'ddToList(Me.Text)
+        '    AddToList(FirstTextBox.Text.PadRight(10) & LastTextBox.Text.PadRight(10) & AgeTextBox.Text.PadLeft(3))
+        '    SetDefaults()
+        'End If
+
+    End Sub
+
+    Function UserInputIsValid() As Boolean
+        Dim valid As Boolean = True
+        Dim message As String
+
+        If FirstNameTextBox.Text = "" Then
+            valid = False
+            FirstNameTextBox.Focus()
+            message &= "First name is required." & vbNewLine
+
+        End If
+    End Function
 End Class
