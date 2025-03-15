@@ -4,6 +4,12 @@
 'Address Label Program
 'URL: 
 
+'TO DO:
+'\| | Clear button to clear all entered info
+'| | reset all the text boxes upon entering data
+'| | get the carriage returns to work appropriately within the big box
+'| | 
+
 Option Strict On
 Option Explicit On
 
@@ -11,35 +17,6 @@ Public Class Form1
     Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles StateTextBox.TextChanged
 
     End Sub
-
-    Private Sub ZipTextBox_TextChanged(sender As Object, e As EventArgs) Handles ZipTextBox.TextChanged
-
-    End Sub
-
-    Private Sub StreetAddressTextBox_TextChanged(sender As Object, e As EventArgs) Handles StreetAddressTextBox.TextChanged
-
-    End Sub
-
-    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
 
     Sub addtolist(thisString As String)
         ListBox1.Items.Add(thisString)
@@ -52,6 +29,7 @@ Public Class Form1
         CityTextBox.Text = ""
         StateTextBox.Text = ""
         ZipTextBox.Text = ""
+        FirstNameTextBox.Focus()
         If ListBox1.SelectedIndex = -1 Then
             ClearButton.Enabled = False
         Else
@@ -99,6 +77,10 @@ Public Class Form1
             message &= "Zip code box is empty."
         End If
 
+        If Not valid Then
+            MsgBox(message, MsgBoxStyle.Exclamation, "User Input Fail!")
+        End If
+
         Return valid
 
     End Function
@@ -129,6 +111,13 @@ Public Class Form1
                       StreetAddressTextBox.Text & vbCrLf _
                       & CityTextBox.Text & ", " & StateTextBox.Text & ZipTextBox.Text)
         End If
+
+        FirstNameTextBox.Clear()
+        LastNameTextBox.Clear()
+        StreetAddressTextBox.Clear()
+        CityTextBox.Clear()
+        StateTextBox.Clear()
+        ZipTextBox.Clear()
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SetDefaults()
@@ -138,4 +127,35 @@ Public Class Form1
         Console.WriteLine($"The information at {ListBox1.SelectedIndex} is {ListBox1.SelectedIndex}")
         ListBox1.Items.RemoveAt(ListBox1.SelectedIndex)
     End Sub
+
+
+    Private Sub ZipTextBox_TextChanged(sender As Object, e As EventArgs) Handles ZipTextBox.TextChanged
+
+    End Sub
+
+    Private Sub StreetAddressTextBox_TextChanged(sender As Object, e As EventArgs) Handles StreetAddressTextBox.TextChanged
+
+    End Sub
+
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+
 End Class
