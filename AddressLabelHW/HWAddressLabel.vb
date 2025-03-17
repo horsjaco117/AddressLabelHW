@@ -5,15 +5,15 @@
 'URL: 
 
 'TO DO:
-'\| | Clear button to clear all entered info
+'| | Clear button to clear all entered info
 '| | reset all the text boxes upon entering data
 '| | get the carriage returns to work appropriately within the big box
-'| | 
+'|x| Successfully rename the program
 
 Option Strict On
 Option Explicit On
 
-Public Class Form1
+Public Class HWAddressLabel
     Private Sub TextBox5_TextChanged(sender As Object, e As EventArgs) Handles StateTextBox.TextChanged
 
     End Sub
@@ -157,5 +157,12 @@ Public Class Form1
 
     End Sub
 
-
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+        SetDefaults()
+        If ListBox1.SelectedIndex = -1 Then
+            ClearButton.Enabled = False
+        Else
+            ClearButton.Enabled = True
+        End If
+    End Sub
 End Class
