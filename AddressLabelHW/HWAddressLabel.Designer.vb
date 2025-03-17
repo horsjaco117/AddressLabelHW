@@ -46,35 +46,35 @@ Partial Class HWAddressLabel
         ' 
         FirstNameTextBox.Location = New Point(16, 83)
         FirstNameTextBox.Name = "FirstNameTextBox"
-        FirstNameTextBox.Size = New Size(150, 31)
+        FirstNameTextBox.Size = New Size(243, 31)
         FirstNameTextBox.TabIndex = 0
         ' 
         ' LastNameTextBox
         ' 
         LastNameTextBox.Location = New Point(16, 145)
         LastNameTextBox.Name = "LastNameTextBox"
-        LastNameTextBox.Size = New Size(150, 31)
+        LastNameTextBox.Size = New Size(243, 31)
         LastNameTextBox.TabIndex = 1
         ' 
         ' StreetAddressTextBox
         ' 
         StreetAddressTextBox.Location = New Point(16, 207)
         StreetAddressTextBox.Name = "StreetAddressTextBox"
-        StreetAddressTextBox.Size = New Size(150, 31)
+        StreetAddressTextBox.Size = New Size(243, 31)
         StreetAddressTextBox.TabIndex = 2
         ' 
         ' CityTextBox
         ' 
         CityTextBox.Location = New Point(16, 269)
         CityTextBox.Name = "CityTextBox"
-        CityTextBox.Size = New Size(150, 31)
+        CityTextBox.Size = New Size(243, 31)
         CityTextBox.TabIndex = 3
         ' 
         ' StateTextBox
         ' 
         StateTextBox.Location = New Point(16, 334)
         StateTextBox.Name = "StateTextBox"
-        StateTextBox.Size = New Size(150, 31)
+        StateTextBox.Size = New Size(243, 31)
         StateTextBox.TabIndex = 4
         ' 
         ' ZipTextBox
@@ -100,7 +100,7 @@ Partial Class HWAddressLabel
         MailingAddressGroupBox.Controls.Add(CityTextBox)
         MailingAddressGroupBox.Location = New Point(12, 21)
         MailingAddressGroupBox.Name = "MailingAddressGroupBox"
-        MailingAddressGroupBox.Size = New Size(416, 502)
+        MailingAddressGroupBox.Size = New Size(286, 502)
         MailingAddressGroupBox.TabIndex = 7
         MailingAddressGroupBox.TabStop = False
         MailingAddressGroupBox.Text = "Mailing Address"
@@ -161,27 +161,27 @@ Partial Class HWAddressLabel
         ' 
         ' DisplayButton
         ' 
-        DisplayButton.Location = New Point(469, 330)
+        DisplayButton.Location = New Point(337, 376)
         DisplayButton.Name = "DisplayButton"
-        DisplayButton.Size = New Size(131, 75)
+        DisplayButton.Size = New Size(185, 112)
         DisplayButton.TabIndex = 8
         DisplayButton.Text = "Display"
         DisplayButton.UseVisualStyleBackColor = True
         ' 
         ' ClearButton
         ' 
-        ClearButton.Location = New Point(622, 333)
+        ClearButton.Location = New Point(542, 376)
         ClearButton.Name = "ClearButton"
-        ClearButton.Size = New Size(119, 75)
+        ClearButton.Size = New Size(149, 112)
         ClearButton.TabIndex = 9
         ClearButton.Text = "Clear"
         ClearButton.UseVisualStyleBackColor = True
         ' 
         ' ExitButton
         ' 
-        ExitButton.Location = New Point(756, 333)
+        ExitButton.Location = New Point(706, 376)
         ExitButton.Name = "ExitButton"
-        ExitButton.Size = New Size(115, 75)
+        ExitButton.Size = New Size(160, 112)
         ExitButton.TabIndex = 10
         ExitButton.Text = "Exit"
         ExitButton.UseVisualStyleBackColor = True
@@ -190,22 +190,22 @@ Partial Class HWAddressLabel
         ' 
         ListBox1.FormattingEnabled = True
         ListBox1.ItemHeight = 25
-        ListBox1.Location = New Point(444, 30)
+        ListBox1.Location = New Point(317, 33)
         ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(411, 279)
+        ListBox1.Size = New Size(605, 329)
         ListBox1.TabIndex = 11
         ' 
-        ' Form1
+        ' HWAddressLabel
         ' 
         AutoScaleDimensions = New SizeF(10.0F, 25.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(995, 615)
+        ClientSize = New Size(986, 594)
         Controls.Add(ListBox1)
         Controls.Add(ExitButton)
         Controls.Add(ClearButton)
         Controls.Add(DisplayButton)
         Controls.Add(MailingAddressGroupBox)
-        Name = "Form1"
+        Name = "HWAddressLabel"
         Text = "Form1"
         MailingAddressGroupBox.ResumeLayout(False)
         MailingAddressGroupBox.PerformLayout()

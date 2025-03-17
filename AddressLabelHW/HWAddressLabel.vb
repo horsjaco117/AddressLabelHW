@@ -2,13 +2,14 @@
 'RCET 0265
 'Spring 2025
 'Address Label Program
-'URL: 
+'URL: https://github.com/horsjaco117/AddressLabelHW
 
 'TO DO:
-'| | Clear button to clear all entered info
-'| | reset all the text boxes upon entering data
+'|x| Clear button to clear all entered info
+'|x| reset all the text boxes upon entering data
 '| | get the carriage returns to work appropriately within the big box
 '|x| Successfully rename the program
+'| | Make zip code exclusively for numbers
 
 Option Strict On
 Option Explicit On
