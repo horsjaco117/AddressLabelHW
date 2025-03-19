@@ -38,8 +38,10 @@ Partial Class HWAddressLabel
         DisplayButton = New Button()
         ClearButton = New Button()
         ExitButton = New Button()
-        ListBox1 = New ListBox()
+        WordsLabel = New Label()
+        AddressLabelBox = New GroupBox()
         MailingAddressGroupBox.SuspendLayout()
+        AddressLabelBox.SuspendLayout()
         SuspendLayout()
         ' 
         ' FirstNameTextBox
@@ -186,21 +188,29 @@ Partial Class HWAddressLabel
         ExitButton.Text = "Exit"
         ExitButton.UseVisualStyleBackColor = True
         ' 
-        ' ListBox1
+        ' WordsLabel
         ' 
-        ListBox1.FormattingEnabled = True
-        ListBox1.ItemHeight = 25
-        ListBox1.Location = New Point(317, 33)
-        ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(605, 329)
-        ListBox1.TabIndex = 11
+        WordsLabel.Location = New Point(6, 34)
+        WordsLabel.Name = "WordsLabel"
+        WordsLabel.Size = New Size(463, 199)
+        WordsLabel.TabIndex = 12
+        ' 
+        ' AddressLabelBox
+        ' 
+        AddressLabelBox.Controls.Add(WordsLabel)
+        AddressLabelBox.Location = New Point(317, 21)
+        AddressLabelBox.Name = "AddressLabelBox"
+        AddressLabelBox.Size = New Size(549, 328)
+        AddressLabelBox.TabIndex = 13
+        AddressLabelBox.TabStop = False
+        AddressLabelBox.Text = "AddressLabel"
         ' 
         ' HWAddressLabel
         ' 
-        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
+        AutoScaleDimensions = New SizeF(10F, 25F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(986, 594)
-        Controls.Add(ListBox1)
+        Controls.Add(AddressLabelBox)
         Controls.Add(ExitButton)
         Controls.Add(ClearButton)
         Controls.Add(DisplayButton)
@@ -209,6 +219,7 @@ Partial Class HWAddressLabel
         Text = "Form1"
         MailingAddressGroupBox.ResumeLayout(False)
         MailingAddressGroupBox.PerformLayout()
+        AddressLabelBox.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -228,6 +239,7 @@ Partial Class HWAddressLabel
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents WordsLabel As Label
+    Friend WithEvents AddressLabelBox As GroupBox
 
 End Class

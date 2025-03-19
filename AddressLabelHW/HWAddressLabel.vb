@@ -19,9 +19,9 @@ Public Class HWAddressLabel
 
     End Sub
 
-    Sub addtolist(thisString As String)
-        ListBox1.Items.Add(thisString)
-    End Sub
+    'Sub addtolist(thisString As String)
+    '    ListBox1.Items.Add(thisString)
+    'End Sub
 
     Sub SetDefaults()
         FirstNameTextBox.Text = ""
@@ -30,12 +30,15 @@ Public Class HWAddressLabel
         CityTextBox.Text = ""
         StateTextBox.Text = ""
         ZipTextBox.Text = ""
+        WordsLabel.Text = ""
         FirstNameTextBox.Focus()
-        If ListBox1.SelectedIndex = -1 Then
-            ClearButton.Enabled = False
-        Else
-            ClearButton.Enabled = True
-        End If
+        'If ListBox1.SelectedIndex = -1 Then
+        '    ClearButton.Enabled = False
+        'Else
+        '    ClearButton.Enabled = True
+        'End If
+
+
 
     End Sub
     Function UserInputIsValid() As Boolean
@@ -106,12 +109,20 @@ Public Class HWAddressLabel
         '    SetDefaults()
         'End If
 
+        'If UserInputIsValid() Then
+        '    addtolist(FirstNameTextBox.Text.PadRight(10) &
+        '              LastNameTextBox.Text.PadRight(10) & vbCrLf &
+        '              StreetAddressTextBox.Text & vbCrLf _
+        '              & CityTextBox.Text & ", " & StateTextBox.Text & ZipTextBox.Text)
+        'End If
+
         If UserInputIsValid() Then
-            addtolist(FirstNameTextBox.Text.PadRight(10) &
-                      LastNameTextBox.Text.PadRight(10) & vbCrLf &
-                      StreetAddressTextBox.Text & vbCrLf _
-                      & CityTextBox.Text & ", " & StateTextBox.Text & ZipTextBox.Text)
+            WordsLabel.Text = FirstNameTextBox.Text.PadRight(10) &
+                       LastNameTextBox.Text.PadRight(10) & vbCrLf &
+                       StreetAddressTextBox.Text & vbCrLf &
+                       CityTextBox.Text & ", " & StateTextBox.Text & " " & ZipTextBox.Text
         End If
+
 
         FirstNameTextBox.Clear()
         LastNameTextBox.Clear()
@@ -125,8 +136,9 @@ Public Class HWAddressLabel
     End Sub
 
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
-        Console.WriteLine($"The information at {ListBox1.SelectedIndex} is {ListBox1.SelectedIndex}")
-        ListBox1.Items.RemoveAt(ListBox1.SelectedIndex)
+        'Console.WriteLine($"The information at {ListBox1.SelectedIndex} is {ListBox1.SelectedIndex}")
+        'ListBox1.Items.RemoveAt(ListBox1.SelectedIndex)
+        WordsLabel.Text = ""
     End Sub
 
 
@@ -158,12 +170,13 @@ Public Class HWAddressLabel
 
     End Sub
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
         SetDefaults()
-        If ListBox1.SelectedIndex = -1 Then
-            ClearButton.Enabled = False
-        Else
-            ClearButton.Enabled = True
-        End If
+
+        'If ListBox1.SelectedIndex = -1 Then
+        '    ClearButton.Enabled = False
+        'Else
+        '    ClearButton.Enabled = True
+        'End If
     End Sub
 End Class
