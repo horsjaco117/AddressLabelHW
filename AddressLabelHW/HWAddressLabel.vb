@@ -179,4 +179,6 @@ Public Class HWAddressLabel
         '    ClearButton.Enabled = True
         'End If
     End Sub
+
+
 End Class
