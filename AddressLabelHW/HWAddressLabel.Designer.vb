@@ -22,6 +22,7 @@ Partial Class HWAddressLabel
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         FirstNameTextBox = New TextBox()
         LastNameTextBox = New TextBox()
         StreetAddressTextBox = New TextBox()
@@ -40,6 +41,7 @@ Partial Class HWAddressLabel
         ExitButton = New Button()
         WordsLabel = New Label()
         AddressLabelBox = New GroupBox()
+        ToolTip1 = New ToolTip(components)
         MailingAddressGroupBox.SuspendLayout()
         AddressLabelBox.SuspendLayout()
         SuspendLayout()
@@ -50,6 +52,7 @@ Partial Class HWAddressLabel
         FirstNameTextBox.Name = "FirstNameTextBox"
         FirstNameTextBox.Size = New Size(243, 31)
         FirstNameTextBox.TabIndex = 0
+        ToolTip1.SetToolTip(FirstNameTextBox, "Your legal first name here")
         ' 
         ' LastNameTextBox
         ' 
@@ -57,6 +60,7 @@ Partial Class HWAddressLabel
         LastNameTextBox.Name = "LastNameTextBox"
         LastNameTextBox.Size = New Size(243, 31)
         LastNameTextBox.TabIndex = 1
+        ToolTip1.SetToolTip(LastNameTextBox, "Allotted space for last name")
         ' 
         ' StreetAddressTextBox
         ' 
@@ -64,6 +68,7 @@ Partial Class HWAddressLabel
         StreetAddressTextBox.Name = "StreetAddressTextBox"
         StreetAddressTextBox.Size = New Size(243, 31)
         StreetAddressTextBox.TabIndex = 2
+        ToolTip1.SetToolTip(StreetAddressTextBox, "Your address of residency")
         ' 
         ' CityTextBox
         ' 
@@ -71,6 +76,7 @@ Partial Class HWAddressLabel
         CityTextBox.Name = "CityTextBox"
         CityTextBox.Size = New Size(243, 31)
         CityTextBox.TabIndex = 3
+        ToolTip1.SetToolTip(CityTextBox, "Your city of residency")
         ' 
         ' StateTextBox
         ' 
@@ -78,6 +84,7 @@ Partial Class HWAddressLabel
         StateTextBox.Name = "StateTextBox"
         StateTextBox.Size = New Size(243, 31)
         StateTextBox.TabIndex = 4
+        ToolTip1.SetToolTip(StateTextBox, "Your state of residency")
         ' 
         ' ZipTextBox
         ' 
@@ -85,6 +92,7 @@ Partial Class HWAddressLabel
         ZipTextBox.Name = "ZipTextBox"
         ZipTextBox.Size = New Size(150, 31)
         ZipTextBox.TabIndex = 5
+        ToolTip1.SetToolTip(ZipTextBox, "The postal code of your town")
         ' 
         ' MailingAddressGroupBox
         ' 
@@ -106,6 +114,7 @@ Partial Class HWAddressLabel
         MailingAddressGroupBox.TabIndex = 7
         MailingAddressGroupBox.TabStop = False
         MailingAddressGroupBox.Text = "Mailing Address"
+        ToolTip1.SetToolTip(MailingAddressGroupBox, "Enter your address info here")
         ' 
         ' Label6
         ' 
@@ -168,6 +177,7 @@ Partial Class HWAddressLabel
         DisplayButton.Size = New Size(185, 112)
         DisplayButton.TabIndex = 8
         DisplayButton.Text = "Display"
+        ToolTip1.SetToolTip(DisplayButton, "Click here to display entered info")
         DisplayButton.UseVisualStyleBackColor = True
         ' 
         ' ClearButton
@@ -177,6 +187,7 @@ Partial Class HWAddressLabel
         ClearButton.Size = New Size(149, 112)
         ClearButton.TabIndex = 9
         ClearButton.Text = "Clear"
+        ToolTip1.SetToolTip(ClearButton, "Clears entered info")
         ClearButton.UseVisualStyleBackColor = True
         ' 
         ' ExitButton
@@ -186,6 +197,7 @@ Partial Class HWAddressLabel
         ExitButton.Size = New Size(160, 112)
         ExitButton.TabIndex = 10
         ExitButton.Text = "Exit"
+        ToolTip1.SetToolTip(ExitButton, "Close the window")
         ExitButton.UseVisualStyleBackColor = True
         ' 
         ' WordsLabel
@@ -207,7 +219,7 @@ Partial Class HWAddressLabel
         ' 
         ' HWAddressLabel
         ' 
-        AutoScaleDimensions = New SizeF(10F, 25F)
+        AutoScaleDimensions = New SizeF(10.0F, 25.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(986, 594)
         Controls.Add(AddressLabelBox)
@@ -217,6 +229,7 @@ Partial Class HWAddressLabel
         Controls.Add(MailingAddressGroupBox)
         Name = "HWAddressLabel"
         Text = "Form1"
+        ToolTip1.SetToolTip(Me, "Displayed address will appear here")
         MailingAddressGroupBox.ResumeLayout(False)
         MailingAddressGroupBox.PerformLayout()
         AddressLabelBox.ResumeLayout(False)
@@ -241,5 +254,6 @@ Partial Class HWAddressLabel
     Friend WithEvents Label1 As Label
     Friend WithEvents WordsLabel As Label
     Friend WithEvents AddressLabelBox As GroupBox
+    Friend WithEvents ToolTip1 As ToolTip
 
 End Class
