@@ -7,9 +7,9 @@
 'TO DO:
 '|x| Clear button to clear all entered info
 '|x| reset all the text boxes upon entering data
-'| | get the carriage returns to work appropriately within the big box
+'|x| get the carriage returns to work appropriately within the big box
 '|x| Successfully rename the program
-'| | Make zip code exclusively for numbers
+'|x| Make zip code exclusively for numbers
 
 Option Strict On
 Option Explicit On
@@ -32,13 +32,6 @@ Public Class HWAddressLabel
         ZipTextBox.Text = ""
         WordsLabel.Text = ""
         FirstNameTextBox.Focus()
-        'If ListBox1.SelectedIndex = -1 Then
-        '    ClearButton.Enabled = False
-        'Else
-        '    ClearButton.Enabled = True
-        'End If
-
-
 
     End Sub
     Function UserInputIsValid() As Boolean
@@ -89,40 +82,19 @@ Public Class HWAddressLabel
 
     End Function
 
-    Private Sub LastNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles LastNameTextBox.TextChanged
-
-    End Sub
-
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
     Private Sub DisplayButton_Click(sender As Object, e As EventArgs) Handles DisplayButton.Click
-        'If UserInputIsValid() Then
-        '    FirstTextBox.Text = Scramble(FirstTextBox.Text)
-        '    LastTextBox.Text = Scramble(LastTextBox.Text)
-        '    SetCase()
-        '    SetFormat()
-        '    ReverseString()
-        '    RemoveWhiteSpace()
-        '    'ddToList(Me.Text)
-        '    AddToList(FirstTextBox.Text.PadRight(10) & LastTextBox.Text.PadRight(10) & AgeTextBox.Text.PadLeft(3))
-        '    SetDefaults()
-        'End If
 
-        'If UserInputIsValid() Then
-        '    addtolist(FirstNameTextBox.Text.PadRight(10) &
-        '              LastNameTextBox.Text.PadRight(10) & vbCrLf &
-        '              StreetAddressTextBox.Text & vbCrLf _
-        '              & CityTextBox.Text & ", " & StateTextBox.Text & ZipTextBox.Text)
-        'End If
-
-        If UserInputIsValid() Then
+        If UserInputIsValid() Then 'Instead of having individual label for each text box these were concatenated into one
             WordsLabel.Text = FirstNameTextBox.Text.PadRight(10) &
                        LastNameTextBox.Text.PadRight(10) & vbCrLf &
                        StreetAddressTextBox.Text & vbCrLf &
                        CityTextBox.Text & ", " & StateTextBox.Text & " " & ZipTextBox.Text
         End If
 
+        'FYI using a singular label for each text box would totally work also. Simplifies code. 
 
         FirstNameTextBox.Clear()
         LastNameTextBox.Clear()
@@ -140,45 +112,8 @@ Public Class HWAddressLabel
         'ListBox1.Items.RemoveAt(ListBox1.SelectedIndex)
         WordsLabel.Text = ""
     End Sub
-
-
-    Private Sub ZipTextBox_TextChanged(sender As Object, e As EventArgs) Handles ZipTextBox.TextChanged
-
-    End Sub
-
-    Private Sub StreetAddressTextBox_TextChanged(sender As Object, e As EventArgs) Handles StreetAddressTextBox.TextChanged
-
-    End Sub
-
-    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
         SetDefaults()
-
-        'If ListBox1.SelectedIndex = -1 Then
-        '    ClearButton.Enabled = False
-        'Else
-        '    ClearButton.Enabled = True
-        'End If
     End Sub
-
 
 End Class
